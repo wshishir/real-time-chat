@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { JetBrains_Mono } from "next/font/google"
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets:["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +20,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased`}
+      className={`${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
